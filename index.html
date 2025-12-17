@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Habit Streak Visualizer</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4cdf20",
+                        "primary-dark": "#3ab018",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#152111",
+                        "card-dark": "#1e2e1a",
+                        "card-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-x-hidden transition-colors duration-300">
+<!-- Navbar -->
+<header class="sticky top-0 z-50 w-full border-b border-[#2d4625]/30 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="px-4 md:px-10 py-4 flex items-center justify-between max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">grid_view</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold tracking-tight">Habit Streak</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-gray-300 hover:text-primary text-sm font-medium transition-colors" href="#features">Features</a>
+<a class="text-slate-600 dark:text-gray-300 hover:text-primary text-sm font-medium transition-colors" href="#how-it-works">How it Works</a>
+<a class="text-slate-600 dark:text-gray-300 hover:text-primary text-sm font-medium transition-colors" href="#pricing">Pricing</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="hidden sm:flex h-10 px-6 items-center justify-center rounded-full border border-[#2d4625] dark:border-[#2d4625] text-slate-700 dark:text-white text-sm font-bold hover:bg-[#2d4625]/20 transition-all">
+                    Log In
+                </button>
+<button class="flex h-10 px-6 items-center justify-center rounded-full bg-primary hover:bg-primary-dark text-background-dark text-sm font-bold shadow-lg shadow-primary/20 transition-all">
+                    Start Free
+                </button>
+</div>
+</div>
+</header>
+<main class="flex flex-col items-center">
+<!-- Hero Section -->
+<section class="relative w-full px-4 py-16 md:py-24 max-w-7xl">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-6 text-center lg:text-left">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 w-fit mx-auto lg:mx-0">
+<span class="material-symbols-outlined text-primary text-sm">bolt</span>
+<span class="text-primary text-xs font-bold uppercase tracking-wide">New: Dark Mode Included</span>
+</div>
+<h1 class="text-4xl md:text-6xl font-black leading-tight tracking-tight">
+                        Don't Break <br class="hidden md:block"/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400">The Chain.</span>
+</h1>
+<p class="text-slate-600 dark:text-gray-300 text-lg md:text-xl max-w-xl mx-auto lg:mx-0">
+                        Visualize your discipline with GitHub-style heatmaps. Build consistency and track your daily habits in a satisfying grid.
+                    </p>
+<div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
+<button class="h-12 px-8 rounded-full bg-primary hover:bg-primary-dark text-background-dark font-bold text-base shadow-[0_0_20px_rgba(76,223,32,0.3)] transition-all transform hover:scale-105">
+                            Start Tracking Free
+                        </button>
+<button class="h-12 px-8 rounded-full bg-slate-200 dark:bg-[#2d4625] text-slate-900 dark:text-white font-bold text-base hover:bg-slate-300 dark:hover:bg-[#3a5a30] transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">play_circle</span>
+                            View Live Demo
+                        </button>
+</div>
+<div class="flex items-center justify-center lg:justify-start gap-4 text-sm text-slate-500 dark:text-gray-400">
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full bg-gray-300 border-2 border-background-dark"></div>
+<div class="size-8 rounded-full bg-gray-400 border-2 border-background-dark"></div>
+<div class="size-8 rounded-full bg-gray-500 border-2 border-background-dark"></div>
+</div>
+<p>Join 10,000+ disciplined users</p>
+</div>
+</div>
+<div class="relative group perspective-1000">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary to-emerald-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+<div class="relative w-full aspect-video bg-card-light dark:bg-card-dark rounded-2xl border border-slate-200 dark:border-[#2d4625] shadow-2xl overflow-hidden flex items-center justify-center p-6" data-alt="GitHub-style heatmap grid showing consistency with green squares and glowing effects">
+<!-- Abstract Heatmap Graphic -->
+<div class="grid grid-cols-12 gap-2 w-full h-full opacity-80">
+<!-- JS-free generation of divs for visual effect -->
+<div class="bg-primary/20 rounded-sm"></div> <div class="bg-primary rounded-sm shadow-[0_0_10px_#4cdf20]"></div> <div class="bg-primary rounded-sm"></div> <div class="bg-primary/40 rounded-sm"></div>
+<div class="bg-primary rounded-sm"></div> <div class="bg-primary rounded-sm"></div> <div class="bg-primary/20 rounded-sm"></div> <div class="bg-primary rounded-sm"></div>
+<div class="bg-primary/10 rounded-sm"></div> <div class="bg-primary rounded-sm"></div> <div class="bg-primary rounded-sm"></div> <div class="bg-primary/60 rounded-sm"></div>
+<div class="bg-primary rounded-sm shadow-[0_0_10px_#4cdf20]"></div> <div class="bg-primary rounded-sm"></div> <div class="bg-primary/30 rounded-sm"></div> <div class="bg-primary rounded-sm"></div>
+<div class="bg-primary/80 rounded-sm"></div> <div class="bg-primary rounded-sm"></div> <div class="bg-primary rounded-sm"></div> <div class="bg-primary/20 rounded-sm"></div>
+<div class="bg-primary rounded-sm"></div> <div class="bg-primary/90 rounded-sm"></div> <div class="bg-primary rounded-sm"></div> <div class="bg-primary rounded-sm"></div>
+<div class="bg-primary rounded-sm"></div> <div class="bg-primary/50 rounded-sm"></div> <div class="bg-primary rounded-sm"></div> <div class="bg-primary rounded-sm"></div>
+<div class="bg-primary rounded-sm shadow-[0_0_15px_#4cdf20]"></div> <div class="bg-primary/20 rounded-sm"></div> <div class="bg-primary rounded-sm"></div> <div class="bg-primary/10 rounded-sm"></div>
+<div class="bg-primary rounded-sm"></div> <div class="bg-primary/70 rounded-sm"></div> <div class="bg-primary rounded-sm"></div> <div class="bg-primary rounded-sm"></div>
+<div class="bg-primary/10 rounded-sm"></div> <div class="bg-primary rounded-sm"></div> <div class="bg-primary rounded-sm"></div> <div class="bg-primary/60 rounded-sm"></div>
+<div class="bg-primary rounded-sm"></div> <div class="bg-primary rounded-sm"></div> <div class="bg-primary/20 rounded-sm"></div> <div class="bg-primary rounded-sm"></div>
+<div class="bg-primary rounded-sm"></div> <div class="bg-primary rounded-sm"></div> <div class="bg-primary/20 rounded-sm"></div> <div class="bg-primary rounded-sm"></div>
+</div>
+<!-- Floating Card Overlay -->
+<div class="absolute bottom-6 right-6 bg-slate-900/90 backdrop-blur-md border border-slate-700 p-4 rounded-xl shadow-xl flex items-center gap-4 animate-bounce" style="animation-duration: 3s;">
+<div class="size-10 rounded-full bg-primary flex items-center justify-center text-background-dark">
+<span class="material-symbols-outlined">local_fire_department</span>
+</div>
+<div>
+<p class="text-xs text-gray-400 uppercase font-bold">Current Streak</p>
+<p class="text-white font-bold text-lg">42 Days</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Heatmap Showcase -->
+<section class="w-full bg-slate-100 dark:bg-[#1a2817] py-20 px-4">
+<div class="max-w-4xl mx-auto flex flex-col items-center">
+<h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-slate-900 dark:text-white">Your Year in Pixels</h2>
+<p class="text-center text-slate-600 dark:text-gray-300 max-w-xl mb-12">
+                    See your progress at a glance. Every green square is a victory. Every empty one is motivation to do better tomorrow.
+                </p>
+<div class="w-full bg-white dark:bg-card-dark rounded-3xl p-6 md:p-10 shadow-xl border border-slate-200 dark:border-[#2d4625]">
+<!-- Toolbar -->
+<div class="flex flex-wrap items-center justify-between mb-8 gap-4">
+<div class="flex items-center gap-2">
+<div class="size-3 rounded-sm bg-primary shadow-[0_0_5px_#4cdf20]"></div>
+<span class="text-sm font-medium dark:text-gray-300">Completed</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="size-3 rounded-sm bg-red-500/80"></div>
+<span class="text-sm font-medium dark:text-gray-300">Streak Break</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="size-3 rounded-sm bg-slate-200 dark:bg-[#2d4625]"></div>
+<span class="text-sm font-medium dark:text-gray-300">Skipped</span>
+</div>
+</div>
+<!-- Calendar Grid Wrapper -->
+<div class="flex flex-col md:flex-row gap-8 justify-center">
+<!-- January -->
+<div class="flex-1 min-w-[300px]">
+<div class="flex items-center justify-between mb-4 px-2">
+<span class="material-symbols-outlined text-gray-400 cursor-pointer">chevron_left</span>
+<h3 class="font-bold text-lg dark:text-white">January 2024</h3>
+<div class="w-6"></div>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center mb-2">
+<span class="text-xs font-bold text-gray-400">S</span>
+<span class="text-xs font-bold text-gray-400">M</span>
+<span class="text-xs font-bold text-gray-400">T</span>
+<span class="text-xs font-bold text-gray-400">W</span>
+<span class="text-xs font-bold text-gray-400">T</span>
+<span class="text-xs font-bold text-gray-400">F</span>
+<span class="text-xs font-bold text-gray-400">S</span>
+</div>
+<div class="grid grid-cols-7 gap-1.5 md:gap-2">
+<!-- Empty days -->
+<div></div><div></div><div></div>
+<!-- Days -->
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-slate-100 dark:bg-[#2d4625] text-gray-500 dark:text-gray-400">1</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold shadow-[0_0_8px_rgba(76,223,32,0.4)]">2</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">3</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">4</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">5</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">6</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">7</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">8</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-red-500 text-white font-bold">9</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">10</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">11</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">12</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">13</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">14</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">15</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">16</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">17</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">18</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">19</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">20</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">21</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">22</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-slate-100 dark:bg-[#2d4625] text-gray-500 dark:text-gray-400">23</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">24</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">25</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">26</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">27</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">28</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">29</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">30</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">31</div>
+</div>
+</div>
+<!-- February -->
+<div class="flex-1 min-w-[300px]">
+<div class="flex items-center justify-between mb-4 px-2">
+<div class="w-6"></div>
+<h3 class="font-bold text-lg dark:text-white">February 2024</h3>
+<span class="material-symbols-outlined text-gray-400 cursor-pointer">chevron_right</span>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center mb-2">
+<span class="text-xs font-bold text-gray-400">S</span>
+<span class="text-xs font-bold text-gray-400">M</span>
+<span class="text-xs font-bold text-gray-400">T</span>
+<span class="text-xs font-bold text-gray-400">W</span>
+<span class="text-xs font-bold text-gray-400">T</span>
+<span class="text-xs font-bold text-gray-400">F</span>
+<span class="text-xs font-bold text-gray-400">S</span>
+</div>
+<div class="grid grid-cols-7 gap-1.5 md:gap-2">
+<!-- Empty days -->
+<div></div><div></div><div></div><div></div><div></div><div></div>
+<!-- Days -->
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">1</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">2</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">3</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">4</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">5</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">6</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">7</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">8</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-primary text-background-dark font-bold">9</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-slate-100 dark:bg-[#2d4625] text-gray-500 dark:text-gray-400 border-2 border-primary/50">10</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-slate-100 dark:bg-[#2d4625] text-gray-500 dark:text-gray-400">11</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-slate-100 dark:bg-[#2d4625] text-gray-500 dark:text-gray-400">12</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-slate-100 dark:bg-[#2d4625] text-gray-500 dark:text-gray-400">13</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-slate-100 dark:bg-[#2d4625] text-gray-500 dark:text-gray-400">14</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-slate-100 dark:bg-[#2d4625] text-gray-500 dark:text-gray-400">15</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-slate-100 dark:bg-[#2d4625] text-gray-500 dark:text-gray-400">16</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-slate-100 dark:bg-[#2d4625] text-gray-500 dark:text-gray-400">17</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-slate-100 dark:bg-[#2d4625] text-gray-500 dark:text-gray-400">18</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-slate-100 dark:bg-[#2d4625] text-gray-500 dark:text-gray-400">19</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-slate-100 dark:bg-[#2d4625] text-gray-500 dark:text-gray-400">20</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-slate-100 dark:bg-[#2d4625] text-gray-500 dark:text-gray-400">21</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-slate-100 dark:bg-[#2d4625] text-gray-500 dark:text-gray-400">22</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-slate-100 dark:bg-[#2d4625] text-gray-500 dark:text-gray-400">23</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-slate-100 dark:bg-[#2d4625] text-gray-500 dark:text-gray-400">24</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-slate-100 dark:bg-[#2d4625] text-gray-500 dark:text-gray-400">25</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-slate-100 dark:bg-[#2d4625] text-gray-500 dark:text-gray-400">26</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-slate-100 dark:bg-[#2d4625] text-gray-500 dark:text-gray-400">27</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-slate-100 dark:bg-[#2d4625] text-gray-500 dark:text-gray-400">28</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm bg-slate-100 dark:bg-[#2d4625] text-gray-500 dark:text-gray-400">29</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="py-24 px-4 w-full max-w-7xl" id="how-it-works">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-black dark:text-white mb-4">Master Consistency in 3 Steps</h2>
+<p class="text-slate-600 dark:text-gray-400">It's simple. It's visual. It works.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8 relative">
+<!-- Connector Line (Desktop) -->
+<div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary/50 to-transparent -z-10"></div>
+<!-- Step 1 -->
+<div class="flex flex-col items-center text-center group">
+<div class="size-24 rounded-2xl bg-white dark:bg-card-dark border border-slate-200 dark:border-[#2d4625] shadow-lg flex items-center justify-center mb-6 relative group-hover:-translate-y-2 transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl text-primary">add_circle</span>
+<div class="absolute -top-3 -right-3 size-8 rounded-full bg-slate-800 text-white flex items-center justify-center font-bold border-4 border-background-light dark:border-background-dark">1</div>
+</div>
+<h3 class="text-xl font-bold dark:text-white mb-2">Define Your Habits</h3>
+<p class="text-sm text-slate-600 dark:text-gray-400 max-w-xs">Choose what matters. Reading, coding, working out. Set your daily targets.</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center text-center group">
+<div class="size-24 rounded-2xl bg-white dark:bg-card-dark border border-slate-200 dark:border-[#2d4625] shadow-lg flex items-center justify-center mb-6 relative group-hover:-translate-y-2 transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl text-primary">check_circle</span>
+<div class="absolute -top-3 -right-3 size-8 rounded-full bg-slate-800 text-white flex items-center justify-center font-bold border-4 border-background-light dark:border-background-dark">2</div>
+</div>
+<h3 class="text-xl font-bold dark:text-white mb-2">Check-in Daily</h3>
+<p class="text-sm text-slate-600 dark:text-gray-400 max-w-xs">Mark your progress with a single click. Satisfying animations make it addictive.</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center text-center group">
+<div class="size-24 rounded-2xl bg-white dark:bg-card-dark border border-slate-200 dark:border-[#2d4625] shadow-lg flex items-center justify-center mb-6 relative group-hover:-translate-y-2 transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl text-primary">grid_on</span>
+<div class="absolute -top-3 -right-3 size-8 rounded-full bg-slate-800 text-white flex items-center justify-center font-bold border-4 border-background-light dark:border-background-dark">3</div>
+</div>
+<h3 class="text-xl font-bold dark:text-white mb-2">Watch the Grid Fill</h3>
+<p class="text-sm text-slate-600 dark:text-gray-400 max-w-xs">See your consistency visually. Don't let the grid have gaps. Don't break the chain.</p>
+</div>
+</div>
+</section>
+<!-- Habit Preview & Why Streaks Work -->
+<section class="w-full bg-white dark:bg-card-dark py-24 px-4 border-y border-slate-200 dark:border-[#2d4625]">
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
+<!-- Live Preview Side -->
+<div>
+<div class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wide mb-4">
+                        Live Preview
+                    </div>
+<h2 class="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-6">Track Everything.</h2>
+<p class="text-slate-600 dark:text-gray-400 mb-10 text-lg">
+                        From drinking water to learning a new language. Our interface is designed to be frictionless.
+                    </p>
+<div class="space-y-4">
+<!-- Habit Card 1 (Active) -->
+<div class="flex items-center justify-between p-4 rounded-2xl bg-slate-50 dark:bg-background-dark border border-primary/30 shadow-lg shadow-primary/5 transition-all hover:border-primary">
+<div class="flex items-center gap-4">
+<button class="size-8 rounded-full bg-primary flex items-center justify-center text-background-dark shadow-[0_0_10px_rgba(76,223,32,0.5)]">
+<span class="material-symbols-outlined text-lg font-bold">check</span>
+</button>
+<div>
+<h4 class="font-bold dark:text-white text-lg">Morning Run (5km)</h4>
+<p class="text-xs text-gray-500">7:00 AM • Health</p>
+</div>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-lg">local_fire_department</span>
+<span class="font-bold">12</span>
+</div>
+</div>
+<!-- Habit Card 2 -->
+<div class="flex items-center justify-between p-4 rounded-2xl bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-[#2d4625] transition-all hover:border-primary/50 group cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="size-8 rounded-full border-2 border-gray-300 dark:border-gray-600 group-hover:border-primary transition-colors"></div>
+<div>
+<h4 class="font-bold dark:text-white text-lg">Read 30 Mins</h4>
+<p class="text-xs text-gray-500">Anytime • Learning</p>
+</div>
+</div>
+<div class="flex items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined text-lg">local_fire_department</span>
+<span class="font-bold">5</span>
+</div>
+</div>
+<!-- Habit Card 3 -->
+<div class="flex items-center justify-between p-4 rounded-2xl bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-[#2d4625] transition-all hover:border-primary/50 group cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="size-8 rounded-full border-2 border-gray-300 dark:border-gray-600 group-hover:border-primary transition-colors"></div>
+<div>
+<h4 class="font-bold dark:text-white text-lg">Drink 2L Water</h4>
+<p class="text-xs text-gray-500">All Day • Health</p>
+</div>
+</div>
+<div class="flex items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined text-lg">local_fire_department</span>
+<span class="font-bold">42</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Psychology Side -->
+<div class="flex flex-col justify-center space-y-6">
+<h3 class="text-2xl font-bold dark:text-white">Why Streaks Work</h3>
+<div class="p-6 rounded-2xl bg-slate-50 dark:bg-[#152112] border border-slate-200 dark:border-[#2d4625]">
+<div class="flex items-start gap-4">
+<div class="p-2 rounded-lg bg-blue-500/10 text-blue-500">
+<span class="material-symbols-outlined">sports_esports</span>
+</div>
+<div>
+<h4 class="font-bold dark:text-white text-lg mb-1">Gamification</h4>
+<p class="text-sm text-slate-600 dark:text-gray-400">Turning your daily tasks into a game makes them addictive in a positive way. You'll want to keep the score up.</p>
+</div>
+</div>
+</div>
+<div class="p-6 rounded-2xl bg-slate-50 dark:bg-[#152112] border border-slate-200 dark:border-[#2d4625]">
+<div class="flex items-start gap-4">
+<div class="p-2 rounded-lg bg-purple-500/10 text-purple-500">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+<div>
+<h4 class="font-bold dark:text-white text-lg mb-1">Visual Accountability</h4>
+<p class="text-sm text-slate-600 dark:text-gray-400">A gap in your grid is painful to look at. This visual tension drives you to complete your habit even when you don't feel like it.</p>
+</div>
+</div>
+</div>
+<div class="p-6 rounded-2xl bg-slate-50 dark:bg-[#152112] border border-slate-200 dark:border-[#2d4625]">
+<div class="flex items-start gap-4">
+<div class="p-2 rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<div>
+<h4 class="font-bold dark:text-white text-lg mb-1">Momentum</h4>
+<p class="text-sm text-slate-600 dark:text-gray-400">Once you have a streak of 5 days, you won't want to lose it. At 50 days, it becomes part of your identity.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 px-4 text-center">
+<div class="max-w-2xl mx-auto flex flex-col items-center gap-8">
+<h2 class="text-4xl md:text-5xl font-black dark:text-white leading-tight">Ready to fill your grid?</h2>
+<p class="text-lg text-slate-600 dark:text-gray-300">Start building the habits that will change your life, one green square at a time.</p>
+<div class="w-full flex flex-col sm:flex-row gap-4 justify-center">
+<button class="h-14 px-8 rounded-full bg-primary hover:bg-primary-dark text-background-dark font-bold text-lg shadow-[0_0_30px_rgba(76,223,32,0.4)] transition-all transform hover:scale-105 min-w-[200px]">
+                        Get Started Now
+                    </button>
+<button class="h-14 px-8 rounded-full bg-transparent border border-slate-300 dark:border-gray-600 hover:bg-slate-100 dark:hover:bg-white/5 text-slate-900 dark:text-white font-bold text-lg transition-all min-w-[200px]">
+                        Read Success Stories
+                    </button>
+</div>
+<p class="text-sm text-slate-500 dark:text-gray-500 mt-4">No credit card required • Free plan available</p>
+</div>
+</section>
+</main>
+<footer class="w-full border-t border-slate-200 dark:border-[#2d4625] py-12 px-4 bg-slate-50 dark:bg-background-dark">
+<div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary text-2xl">grid_view</span>
+<span class="font-bold dark:text-white">Habit Streak</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-gray-500">Visualize your discipline.</p>
+</div>
+<div>
+<h4 class="font-bold dark:text-white mb-4">Product</h4>
+<ul class="space-y-2 text-sm text-slate-500 dark:text-gray-400">
+<li><a class="hover:text-primary" href="#">Features</a></li>
+<li><a class="hover:text-primary" href="#">Pricing</a></li>
+<li><a class="hover:text-primary" href="#">Integrations</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold dark:text-white mb-4">Company</h4>
+<ul class="space-y-2 text-sm text-slate-500 dark:text-gray-400">
+<li><a class="hover:text-primary" href="#">About</a></li>
+<li><a class="hover:text-primary" href="#">Blog</a></li>
+<li><a class="hover:text-primary" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold dark:text-white mb-4">Legal</h4>
+<ul class="space-y-2 text-sm text-slate-500 dark:text-gray-400">
+<li><a class="hover:text-primary" href="#">Privacy</a></li>
+<li><a class="hover:text-primary" href="#">Terms</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-200 dark:border-[#2d4625] text-center text-sm text-slate-400">
+            © 2024 Habit Streak Visualizer. All rights reserved.
+        </div>
+</footer>
+</body></html>
